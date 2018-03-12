@@ -1,0 +1,14 @@
+- hosts: localhost
+  tasks:
+  - name: install the latest version of docker
+    package:
+      name: docker.io
+      state: latest
+  - name: change the Logging Driver configuration
+    copy:
+      src: ./daemon.json
+      dest: /etc/docker/daemon.json
+  - name: reload docker for config to take effect
+    service:
+      name: docker
+      state: reloaded
