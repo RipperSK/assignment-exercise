@@ -1,0 +1,8 @@
+- hosts: localhost
+  tasks:
+  - name: install rsyslog
+    package: rsyslog
+  - name: customize default configuration
+    lineinfile:
+      path: /etc/rsyslog.d/50-default.conf
+      line: '*.*         @@10.10.10.1:514' #substitute your own severity and collecting server IP/HOSTNAME

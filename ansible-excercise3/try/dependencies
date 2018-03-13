@@ -1,0 +1,4 @@
+1) sudo ansible-galaxy install sansible.rsyslog
+2) This role is designed to work with merge "hash_behaviour". Make sure your ansible.cfg contains these settings:
+[defaults]
+hash_behaviour = merge
